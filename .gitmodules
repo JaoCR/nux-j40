@@ -1,0 +1,96 @@
+[submodule "repos/vim-airline-themes"]
+	path = vimpacks/start/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "repos/vim-airline"]
+	path = vimpacks/start/airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "repos/codi.vim"]
+	path = vimpacks/start/codi
+	url = https://github.com/metakirby5/codi.vim.git
+[submodule "repos/ctrlp.vim"]
+	path = vimpacks/start/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "repos/vim-fish"]
+	path = vimpacks/start/fish
+	url = https://github.com/dag/vim-fish.git
+[submodule "repos/vim-fugitive"]
+	path = vimpacks/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "repos/vim-gitgutter"]
+	path = vimpacks/start/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "repos/nerdcommenter"]
+	path = vimpacks/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "repos/nerdtree"]
+	path = vimpacks/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "repos/vim-repl"]
+	path = vimpacks/start/repl
+	url = https://github.com/sillybun/vim-repl.git
+[submodule "repos/vim-surround"]
+	path = vimpacks/start/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "repos/tagbar"]
+	path = vimpacks/start/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "repos/vim-toml"]
+	path = vimpacks/start/toml
+	url = https://github.com/cespare/vim-toml.git
+[submodule "repos/vim-atom-dark"]
+	path = vimpacks/start/theme-atom-dark
+	url = https://github.com/gosukiwi/vim-atom-dark.git
+[submodule "repos/ayu-vim"]
+	path = vimpacks/start/theme-ayu
+	url = https://github.com/ayu-theme/ayu-vim.git
+[submodule "repos/badwolf"]
+	path = vimpacks/start/theme-badwolf
+	url = https://github.com/sjl/badwolf.git
+[submodule "repos/base16-vim"]
+	path = vimpacks/start/theme-base16
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule "repos/vim"]
+	path = vimpacks/start/theme-dracula
+	url = https://github.com/dracula/vim.git
+[submodule "repos/gruvbox"]
+	path = vimpacks/start/theme-gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "repos/inkpot"]
+	path = vimpacks/start/theme-inkpot
+	url = https://github.com/ciaranm/inkpot.git
+[submodule "repos/jellybeans.vim"]
+	path = vimpacks/start/theme-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "repos/molokai"]
+	path = vimpacks/start/theme-molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "repos/nord-vim"]
+	path = vimpacks/start/theme-nord
+	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "repos/oceanic-next"]
+	path = vimpacks/start/theme-oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git
+[submodule "repos/vim-one"]
+	path = vimpacks/start/theme-one
+	url = https://github.com/rakr/vim-one.git
+[submodule "repos/palenight.vim"]
+	path = vimpacks/start/theme-palenight
+	url = https://github.com/drewtempelmeyer/palenight.vim.git
+[submodule "repos/papercolor-theme"]
+	path = vimpacks/start/theme-papercolor
+	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "repos/vim-snazzy"]
+	path = vimpacks/start/theme-snazzy
+	url = https://github.com/connorholyday/vim-snazzy.git
+[submodule "repos/vim-colors-solarized"]
+	path = vimpacks/start/theme-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "repos/vim-solarized8"]
+	path = vimpacks/start/theme-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "repos/tender.vim"]
+	path = vimpacks/start/theme-tender
+	url = https://github.com/jacoborus/tender.vim.git
+[submodule "repos/Zenburn"]
+	path = vimpacks/start/theme-zenburn
+	url = https://github.com/jnurmine/Zenburn.git
