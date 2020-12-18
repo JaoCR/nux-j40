@@ -1,0 +1,99 @@
+"     _   ___ _____ 
+"    (_) /   |  _  |
+"     _ / /| | |/' |
+"    | / /_| |  /| |
+"    | \___  \ |_/ /
+"    | |   |_/\___/ 
+"   _/ |            
+"  |__/             
+"
+"  j40's vim setting
+
+" Hybrid line numbers
+set nu rnu
+
+" Enable syntax highlighting
+syntax on
+
+" Better command-line completions
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Automatic indentation
+filetype indent plugin on
+set autoindent
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Enable mouse mode
+set mouse=a
+
+" set moving between windows to ctrl+hjkl
+noremap <silent> <C-l> <c-w>l
+noremap <silent> <C-h> <c-w>h
+noremap <silent> <C-k> <c-w>k
+noremap <silent> <C-j> <c-w>j
+tnoremap <silent> <C-l> <C-w>l
+tnoremap <silent> <C-h> <C-w>h
+tnoremap <silent> <C-k> <C-w>k
+tnoremap <silent> <C-j> <C-w>j
+inoremap <silent> <C-l> <C-w>l
+inoremap <silent> <C-h> <C-w>h
+inoremap <silent> <C-k> <C-w>k
+inoremap <silent> <C-j> <C-w>j
+
+" set moving windows to HJKL
+noremap <silent> L <c-w>L
+noremap <silent> H <c-w>H
+noremap <silent> J <c-w>J
+noremap <silent> K <c-w>K
+
+" set resizing keys 
+noremap <silent> <leader>= <c-w>=
+noremap <silent> + :res +1<CR> 
+noremap <silent> - :res -1<CR>
+noremap <silent> > :vert res +1<CR>
+noremap <silent> < :vert res -1<CR>
+
+" preload Termdebug
+packadd termdebug
+cnoreabbrev gdb :Termdebug %:r<CR><c-w>2j<c-w>L
+
+" airline configuration
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'badwolf'
+
+" general theme
+set termguicolors
+color badwolf
+
+" cursor
+"" let &t_SI = "\<Esc>[6 q"
+"" let &t_SR = "\<Esc>[4 q"
+"" let &t_EI = "\<Esc>[2 q"
+
+" repl settings
+let g:repl_program = {
+            \   'python': 'ipython',
+            \   'default': 'zsh',
+            \   'r': 'R',
+            \   'lua': 'lua',
+            \   'vim': 'vim -e',
+            \   }
+let g:repl_predefine_python = {
+            \   'numpy': 'import numpy as np',
+            \   'matplotlib': 'from matplotlib import pyplot as plt'
+            \   }
+let g:repl_cursor_down = 1
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '7'
+let g:repl_output_copy_to_register = "t"
+nnoremap <leader>r :REPLToggle<Cr>
+nnoremap <leader>e :REPLSendSession<Cr>
+autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
+autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
+autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
+let g:repl_position = 3
