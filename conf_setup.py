@@ -13,6 +13,7 @@ home = os.path.expanduser('~')
 config_files = (
     (f"{j40}/config/fish",      f"{home}/.config/fish/conf.d/j40.fish"),
     (f"{j40}/config/vim",       f"{home}/.vimrc"),
+    (f"{j40}/vimpacks",         f"{home}/.vim/pack/j40"),
     (f"{j40}/config/qtile",     f"{home}/.config/qtile/config.py"),
     (f"{j40}/config/termite",   f"{home}/.config/termite/config"),
     (f"{j40}/config/git",       f"{home}/.gitconfig"),
@@ -36,22 +37,21 @@ def set_config(src, dst):
     # not exist
     if not os.path.isdir(dirname):
         os.mkdir(dirname)
-        os.symlink(src, dst)
 
-    # if file does exist and is
+    # if link does exist and is
     # also the correct symlink, 
     # do nothing
-    elif os.path.isfile(dst) and os.path.realpath(dst) == src:
+    elif os.path.islink(dst) and os.path.realpath(dst) == src:
         return
 
-    # if folder and file do exist
+    # if folder and link do exist
     # and are not the correct link,
     # make a backup
-    else:
-        filename = dst.split('/')[-1]
+    elif os.path.exists(dst):
+        filename = os.path.basename(dst)
         os.rename(dst, f"{backup}/{filename}")
 
-    # if the file does not exist
+    # if the link does not exist
     # or is the incorrect link
     # (implicit from previous ifs),
     # symlink the new one
@@ -64,7 +64,4 @@ def set_config(src, dst):
 # config file
 for src, dst in config_files:
     set_config(src, dst)
-
-
-    
 
