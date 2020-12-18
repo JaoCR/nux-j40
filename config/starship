@@ -1,0 +1,87 @@
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[character]
+error_symbol = "[✖](bold red) "
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "bold red"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+progress_divider = " of "
+
+[git_status]
+conflicted = "❌ "
+ahead = "🔼×${count} "
+behind = "🔽×${count} "
+diverged = "🔼×${ahead_count} 🔽×${behind_count} "
+untracked = "❔×${count} "
+stashed = "📦 "
+modified = "📝×${count} "
+staged = "🗃️×${count} "
+renamed = "📛×${count} "
+deleted = "🗑️×${count} "
+style = "bold dimmed white "
+format = "([⟪ [$all_status$ahead_behind]($style)⟫](bold red) )"
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[julia]
+format = "[$symbol$version]($style) "
+symbol = "ஃ "
+style = "bold green"
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+show_percentage = true
+show_swap = true
+threshold = 50
+style = "bold dimmed white"
+disabled = false
+
+[package]
+disabled = true
+
+[python]
+symbol = "꩜ "
+format = "[$symbol($virtualenv )⟪ $version ⟫]($style) "
+style = "bold green"
+
+[time]
+time_format = "%T"
+style = "none bright-white"
+right = "[⦗](bold dimmed white)"
+left = "[⦘](bold dimmed white)"
+format = "[⦗](bold dimmed blue)$time($style)[⦘](bold dimmed blue) "
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[conda]
+disabled = true
