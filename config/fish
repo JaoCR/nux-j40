@@ -1,4 +1,5 @@
 #! /usr/bin/fish
+#vim: set ft=fish
 #
 #      _   ___ _____
 #     (_) /   |  _  |
@@ -23,20 +24,8 @@
 ##   lsd        : much better ls
 ##
 
-
 # exit if not in interactive mode
 not status -i; and exit
-
-# Anaconda and Miniconda might break the
-# clear command in some distros, this
-# fixes it sending an escape character.
-# Also I sometimes like to run pfetch after clear.
-#
-# <C-l> completely clears the terminal usually
-#
-alias clear='echo -n \033c'
-## command -q neofetch; and alias clear="echo -\033c; neofetch"
-## command -s pfetch; and alias clear='echo -n \033c; pfetch'
 
 # better lists, best with lsd
 alias ls='ls --color=auto'
@@ -44,7 +33,9 @@ alias la='ls -a'
 alias ll='ls -la'
 alias l='ls'
 alias l.='ls -A | egrep "^\."'
-command -s lsd; and alias ls='lsd'
+if command -s -q lsd
+    alias ls='lsd'
+end
 
 # typos
 alias cd..='cd ..'
@@ -79,14 +70,14 @@ alias psa='ps auxf'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 
 # grub update
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # add new fonts
-alias update-fc='sudo fc-cache -fv'
+alias updatefc='sudo fc-cache -fv'
 
 # skel backup shenanigans
-alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+alias skel='cp -Rf ~/.config ~/.config-backup-(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
+alias bupskel='cp -Rf /etc/skel ~/.skel-backup-(date +%Y.%m.%d-%H.%M.%S)'
 
 # choose ya shell
 alias tobash='sudo chsh $USER -s /bin/bash && echo "Now log out."'
@@ -114,8 +105,8 @@ alias yta-wav='youtube-dl --extract-audio --audio-format wav '
 alias ytv-best='youtube-dl -f bestvideo+bestaudio '
 
 # rip as in recently installed packages, not rest in peace
-alias rip='expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl'
-alias riplong='expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl'
+alias rip='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
+alias riplong='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -3000 | nl'
 
 #get the error messages from journalctl
 alias jctl='journalctl -p 3 -xb'
@@ -241,13 +232,13 @@ if cat /etc/*-release | grep -q 'arch'
     alias yayskip='yay -S --mflags --skipinteg'
     alias trizenskip='trizen -S --skipinteg'
     # >> cleanup orphaned packages
-    alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+    alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
     # get fastest mirrors in your neighborhood
-    alias mirror='sudo /usr/bin/python -m Reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
-    alias mirrord='sudo /usr/bin/python -m Reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist'
-    alias mirrors='sudo /usr/bin/python -m Reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
-    alias mirrora='sudo /usr/bin/python -m Reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist'
+    alias mirror='reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+    alias mirrord='reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist'
+    alias mirrors='reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
+    alias mirrora='reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist'
 
     # pacman unlock
     alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -282,7 +273,5 @@ if cat /etc/*-release | grep -q 'arcolinux'
     alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 
     # maintenance
-    alias downgrada"sudo downgrade --ala-url https://bike.seedhost.eu/arcolinux/"
+    alias downgrada="sudo downgrade --ala-url https://bike.seedhost.eu/arcolinux/"
 end
-
-echo -n \033c
