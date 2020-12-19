@@ -25,25 +25,106 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
-    lightdm
-    arcolinux-lightdm-gtk-greeter
-    arcolinux-lightdm-gtk-greeter-settings
-    arcolinux-wallpapers-git
-    thunar
-    thunar-archive-plugin
-    thunar-volman
-    termite
-    qtile
-    sxhkd
-    dmenu
-    feh
-    python-psutil
-    xcb-util-cursor
-    arcolinux-qtile-git
-    arcolinux-qtile-dconf-git
-    arcolinux-config-qtile-git
-    awesome-terminal-fonts
-    arcolinux-logout-git
+lightdm
+arcolinux-wallpapers-git
+pcmanfm
+qtile
+dmenu
+feh
+python-psutil
+xcb-util-cursor
+arcolinux-qtile-git
+arcolinux-qtile-dconf-git
+arcolinux-config-qtile-git
+awesome-terminal-fonts
+arcolinux-logout-git
+firefox
+chromium
+qbittorrent
+flameshot
+discord
+simplescreenrecorder
+scrot
+pulseaudio
+pulseaudio-alsa
+pavucontrol
+alsa-firmware
+alsa-lib
+alsa-plugins
+alsa-utils
+gstreamer
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-base
+gst-plugins-ugly
+playerctl
+volumeicon
+pulseaudio-bluetooth
+bluez
+bluez-libs
+bluez-utils
+blueberry
+cups
+cups-pdf
+ghostscript
+gsfonts
+gutenprint
+gtk3-print-backends
+libcups
+system-config-printer
+tlp
+avahi
+nss-mdns
+gvfs-smb
+variety
+gimp
+inkscape
+vlc
+evince
+dconf-editor
+arc-gtk-theme
+unace
+unrar
+zip
+unzip
+sharutils
+uudeview
+arj
+cabextract
+file-roller
+mintstick-git
+peek
+downgrade
+hardcode-fixer-git
+gtk-engine-murrine
+imagemagick
+picom
+python-pywal
+arcolinux-bin-git
+arcolinux-hblock-git
+arcolinux-root-git
+arcolinux-termite-themes-git
+arcolinux-tweak-tool-git
+arcolinux-variety-git
+arcolinux-fonts-git
+awesome-terminal-fonts
+adobe-source-sans-pro-fonts
+cantarell-fonts
+noto-fonts
+ttf-bitstream-vera
+ttf-dejavu
+ttf-droid
+ttf-hack
+ttf-inconsolata
+ttf-liberation
+ttf-roboto
+ttf-ubuntu-font-family
+tamsyn-font
+conky-lua-archers
+arcolinux-conky-collection-git
+arcolinux-pipemenus-git
+yad
+libpulse
 )
 
 count=0
@@ -53,3 +134,73 @@ for name in "${list[@]}" ; do
     tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
     func_install $name
 done
+
+###############################################################################
+
+tput setaf 6
+echo "################################################################"
+echo "Copying all files and folders from /etc/skel to ~"
+echo "################################################################"
+echo
+tput sgr0
+cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)
+cp -arf /etc/skel/. ~
+
+tput setaf 5
+echo "################################################################"
+echo "Enabling lightdm as display manager"
+echo "################################################################"
+echo
+tput sgr0
+sudo systemctl enable lightdm.service -f
+
+tput setaf 5
+echo "################################################################"
+echo "Change nsswitch.conf for access to nas servers"
+echo "################################################################"
+echo
+tput sgr0
+
+#hosts: files mymachines myhostname resolve [!UNAVAIL=return] dns
+#ArcoLinux line
+#hosts: files mymachines resolve [!UNAVAIL=return] mdns dns wins myhostname
+
+#first part
+sudo sed -i 's/files mymachines myhostname/files mymachines/g' /etc/nsswitch.conf
+#last part
+sudo sed -i 's/\[\!UNAVAIL=return\] dns/\[\!UNAVAIL=return\] mdns dns wins myhostname/g' /etc/nsswitch.conf
+
+tput setaf 5
+echo "################################################################"
+echo "Enabling services"
+echo "################################################################"
+echo
+tput sgr0
+
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+sudo systemctl enable org.cups.cupsd.service
+sudo systemctl enable tlp.service
+sudo systemctl enable avahi-daemon.service
+
+count=0
+for name in "${list[@]}" ; do
+	count=$[count+1]
+	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
+	func_install $name
+done
+tput setaf 5
+echo "################################################################"
+echo "Fixing hardcoded icon paths for applications - Wait for it"
+echo "################################################################"
+echo
+tput sgr0
+sudo hardcode-fixer
+
+tput setaf 11;
+echo "################################################################"
+echo "Software has been installed"
+echo "################################################################"
+echo
+tput sgr0
