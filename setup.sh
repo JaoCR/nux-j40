@@ -147,6 +147,7 @@ lolcat
 pfetch-git
 yasm
 python-virtualenv
+lsd
 )
 
 count=0
