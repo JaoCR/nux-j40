@@ -224,7 +224,7 @@ echo
 tput sgr0
 
 # final setup
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish $USER
 curl -fsSL https://starship.rs/install.sh | bash
 mkdir ~/.venv
 git submodule update --init --recursive
