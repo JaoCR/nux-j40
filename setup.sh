@@ -26,12 +26,17 @@ echo "Installation of the core software"
 
 list=(
 lightdm
+arcolinux-lightdm-gtk-greeter
+arcolinux-lightdm-gtk-greeter-settings
 arcolinux-wallpapers-git
-pcmanfm
+thunar
+thunar-archive-plugin
+thunar-volman
 xfce4-terminal
 arcolinux-xfce-git
 arcolinux-local-xfce4-git
 qtile
+sxhkd
 dmenu
 feh
 python-psutil
@@ -41,6 +46,7 @@ arcolinux-qtile-dconf-git
 arcolinux-config-qtile-git
 awesome-terminal-fonts
 arcolinux-logout-git
+pcmanfm
 firefox
 chromium
 qbittorrent
@@ -196,16 +202,11 @@ tput sgr0
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+
 sudo systemctl enable org.cups.cupsd.service
 sudo systemctl enable tlp.service
 sudo systemctl enable avahi-daemon.service
 
-count=0
-for name in "${list[@]}" ; do
-	count=$[count+1]
-	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-	func_install $name
-done
 tput setaf 5
 echo "################################################################"
 echo "Fixing hardcoded icon paths for applications - Wait for it"

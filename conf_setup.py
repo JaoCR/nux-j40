@@ -24,7 +24,7 @@ config_files = (
 # get datetime for backup
 timestamp = strftime('%Y-%m-%d_%H-%M-%S', localtime())
 backup = f"{j40}/backup/{timestamp}" 
-os.mkdir(backup)
+os.mkdirs(backup)
 
 # function to setup individual
 # config files
