@@ -109,6 +109,7 @@ arcolinux-variety-git
 arcolinux-fonts-git
 awesome-terminal-fonts
 adobe-source-sans-pro-fonts
+adobe-source-code-pro-fonts
 cantarell-fonts
 noto-fonts
 ttf-bitstream-vera
@@ -120,11 +121,22 @@ ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
 tamsyn-font
+nerd-fonts-roboto-mono
+nerd-fonts-source-code-pro
+terminus-font
 conky-lua-archers
 arcolinux-conky-collection-git
 arcolinux-pipemenus-git
 yad
 libpulse
+asciiquarium
+cmatrix
+cowsay
+figlet
+fish
+lolcat
+pfetch-git
+yasm
 )
 
 count=0
