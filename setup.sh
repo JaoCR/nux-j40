@@ -1,5 +1,9 @@
 # mod of arcolinuxd install script
 
+# preinstall setup
+mirror
+upall
+
 
 func_install() {
     if pacman -Qi $1 &> /dev/null; then
