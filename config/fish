@@ -215,6 +215,12 @@ function cvenv -a env
     virtualenv ~/.venv/$env
 end
 
+# little function to
+# configure stuff
+function cfg -a name
+    vim ~/.j40/config/$name
+end
+
 
 
 ################
