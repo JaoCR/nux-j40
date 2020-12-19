@@ -216,7 +216,7 @@ sudo hardcode-fixer
 
 tput setaf 11;
 echo "################################################################"
-echo "Software has been installed"
+echo "Software installed, making final configurations"
 echo "################################################################"
 echo
 tput sgr0
@@ -225,4 +225,11 @@ tput sgr0
 chsh -s /usr/bin/fish
 curl -fsSL https://starship.rs/install.sh | bash
 mkdir ~/.venv
-python conf_setup
+python conf_setup.py
+
+tput setaf 11;
+echo "################################################################"
+echo "Software has been installed"
+echo "################################################################"
+echo
+tput sgr0

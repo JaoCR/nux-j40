@@ -36,7 +36,7 @@ def set_config(src, dst):
     # create folder if it does
     # not exist
     if not os.path.isdir(dirname):
-        os.mkdir(dirname)
+        os.mkdirs(dirname)
 
     # if link does exist and is
     # also the correct symlink, 
