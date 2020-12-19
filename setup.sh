@@ -150,6 +150,7 @@ pfetch-git
 yasm
 python-virtualenv
 lsd
+fortune-mod
 )
 
 count=0
