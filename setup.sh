@@ -28,6 +28,9 @@ list=(
 lightdm
 arcolinux-wallpapers-git
 pcmanfm
+xfce4-terminal
+arcolinux-xfce-git
+arcolinux-local-xfce4-git
 qtile
 dmenu
 feh
@@ -137,6 +140,7 @@ fish
 lolcat
 pfetch-git
 yasm
+python-virtualenv
 )
 
 count=0
@@ -216,3 +220,9 @@ echo "Software has been installed"
 echo "################################################################"
 echo
 tput sgr0
+
+# final setup
+chsh -s /usr/bin/fish
+curl -fsSL https://starship.rs/install.sh | bash
+mkdir ~/.venv
+python conf_setup
