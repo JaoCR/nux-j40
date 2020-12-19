@@ -1,9 +1,8 @@
 # mod of arcolinuxd install script
 
 # preinstall setup
-mirror
-upall
-
+sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist
+yay -Syu --noconfirm
 
 func_install() {
     if pacman -Qi $1 &> /dev/null; then
@@ -133,9 +132,8 @@ ttf-inconsolata
 ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
+tff-nerd-fonts-symbols
 tamsyn-font
-nerd-fonts-roboto-mono
-nerd-fonts-source-code-pro
 terminus-font
 conky-lua-archers
 arcolinux-conky-collection-git
