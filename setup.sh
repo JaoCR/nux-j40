@@ -226,6 +226,7 @@ tput sgr0
 chsh -s /usr/bin/fish
 curl -fsSL https://starship.rs/install.sh | bash
 mkdir ~/.venv
+git submodule update --init --recursive
 python conf_setup.py
 
 tput setaf 11;
