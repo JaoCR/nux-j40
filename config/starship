@@ -21,6 +21,7 @@ truncation_length = 5
 format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
+symbol = " "
 format = "[$symbol$branch]($style) "
 style = "bold red"
 
@@ -68,7 +69,8 @@ disabled = false
 disabled = true
 
 [python]
-symbol = " "
+symbol = " "
+
 format = "[$symbol($virtualenv )⟪ [$version](dimmed) ⟫]($style) "
 style = "bold green"
 
