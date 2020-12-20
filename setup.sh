@@ -31,6 +31,9 @@ echo "Installation of the core software"
 list=(
 lightdm
 arcolinux-wallpapers-git
+xfce4-terminal
+arcolinux-xfce-git
+arcolinux-local-xfce4-git
 qtile
 sxhkd
 dmenu
