@@ -228,7 +228,9 @@ tput sgr0
 
 # final setup
 sudo chsh -s /usr/bin/fish $USER
-curl -fsSL https://starship.rs/install.sh | bash
+wget https://starship.rs/install.sh
+bash install.sh -y
+rm install.sh
 mkdir ~/.venv
 git submodule update --init --recursive
 python conf_setup.py
