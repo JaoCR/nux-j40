@@ -30,10 +30,9 @@ echo "Installation of the core software"
 
 list=(
 lightdm
+arcolinux-lightdm-gtk-greeter
+arcolinux-lightdm-gtk-greeter-settings
 arcolinux-wallpapers-git
-xfce4-terminal
-arcolinux-xfce-git
-arcolinux-local-xfce4-git
 qtile
 sxhkd
 dmenu
@@ -133,7 +132,7 @@ tamsyn-font
 terminus-font
 nerd-fonts-hack
 nerd-fonts-source-code-pro
-nerd-fonts-fira-code
+otf-nerd-fonts-fira-code
 nerd-fonts-terminus
 conky-lua-archers
 arcolinux-conky-collection-git
