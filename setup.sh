@@ -19,7 +19,7 @@ func_install() {
         echo "###############################################################################"
         echo
         tput sgr0
-        sudo pacman -S --noconfirm --needed $1
+        sudo yay -S --noconfirm --needed $1
     fi
 }
 
@@ -135,6 +135,10 @@ ttf-ubuntu-font-family
 tff-nerd-fonts-symbols
 tamsyn-font
 terminus-font
+nerd-fonts-hack
+nerd-fonts-source-code-pro
+nerd-fonts-fira-code
+nerd-fonts-terminus
 conky-lua-archers
 arcolinux-conky-collection-git
 arcolinux-pipemenus-git
