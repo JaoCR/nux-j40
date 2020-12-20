@@ -220,6 +220,7 @@ end
 function cfg -a name
     vim ~/.j40/config/$name
 end
+complete -f -c "cfg" -a (command ls ~/.j40/config/ | string join " ")
 
 
 
