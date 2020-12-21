@@ -19,8 +19,10 @@ func_install() {
         echo "###############################################################################"
         echo
         tput sgr0
-        sudo pacman -S --noconfirm --needed $1
-        or yay -S --noconfirm --needed $1
+        if ! sudo pacman -S --noconfirm --needed $1; then
+            echo "trying with yay"
+            yay -S --noconfirm --needed $1
+        fi
     fi
 }
 
@@ -153,7 +155,6 @@ fortune-mod
 )
 
 count=0
-
 for name in "${list[@]}" ; do
     count=$[count+1]
     tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
