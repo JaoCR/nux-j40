@@ -43,45 +43,52 @@ urgent_on_bell = true
 #### Use websites to make the terminal your own
 #### https://terminal.sexy
 #### https://critical.ch/xterm/
-############################################################
+#####
 
 [colors]
-# ArcoLinux Default Theme
-background = rgba(40, 42, 54, 0.8)
 
 # special
-foreground      = #f8f8f2
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
+foreground      = #98d1ce
+foreground_bold = #98d1ce
+cursor          = #98d1ce
+background      = #0a0f14
 
-# black
-color0  = #000000
-color8  = #79A9FF
+# 16 color space
 
-# red
-color1  = #ff5555
-color9  = #ff6e67
+# Black, Gray, Silver, White
+color0  = #0b1c2c
+color8  = #627e99
+color7  = #cbd6e2
+color15 = #f7f9fb
 
-# green
-color2  = #50fa7b
-color10 = #5af78e
+# Red
+color1  = #bf8b56
+color9  = #bf8b56
 
-# yellow
-color3  = #f1fa8c
-color11 = #f4f99d
+# Green
+color2  = #56bf8b
+color10 = #56bf8b
 
-# blue
-color4  = #6790EB
-color12 = #79A9FF
+# Yellow
+color3  = #8bbf56
+color11 = #8bbf56
 
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
+# Blue
+color4  = #8b56bf
+color12 = #8b56bf
 
-# cyan
-color6  = #8be9fd
-color14 = #9aedfe
+# Purple
+color5  = #bf568b
+color13 = #bf568b
 
-# white
-color7  = #bfbfbf
-color15 = #e6e6e6
+# Teal
+color6  = #568bbf
+color14 = #568bbf
+
+# Extra colors
+color16 = #bfbf56
+color17 = #bf5656
+color18 = #223b54
+color19 = #405c79
+color20 = #aabcce
+color21 = #e5ebf1

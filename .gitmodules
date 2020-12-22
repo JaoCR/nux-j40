@@ -94,3 +94,6 @@
 [submodule "repos/Zenburn"]
 	path = vimpacks/start/theme-zenburn
 	url = https://github.com/jnurmine/Zenburn.git
+[submodule "fun/color-scripts"]
+	path = fun/color-scripts
+	url = https://github.com/stark/color-scripts

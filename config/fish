@@ -1,5 +1,5 @@
 #! /usr/bin/fish
-#vim: set ft=fish
+# vim: set ft=fish:
 #
 #      _   ___ _____
 #     (_) /   |  _  |
@@ -178,8 +178,14 @@ fish_vi_key_bindings
 # set starship as default prompt
 starship init fish | source
 
-# bling 
-alias fish_greeting='fortune | lolcat'
+# greetigs 
+#alias fish_greeting='fortune | lolcat'
+#alias fish_greeting='pfetch'
+function fish_greeting
+    set -l colordir ~/.j40/fun/color-scripts/color-scripts
+    command find $colordir | command sort -R | command tail -1 | fish 
+end
+
 
 # shorthand refresh
 alias rf='refresh'
