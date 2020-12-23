@@ -97,3 +97,6 @@
 [submodule "fun/color-scripts"]
 	path = fun/color-scripts
 	url = https://github.com/stark/color-scripts
+[submodule "vimpacks/start/julia-vim"]
+	path = vimpacks/start/julia-vim
+	url = https://github.com/JuliaEditorSupport/julia-vim.git

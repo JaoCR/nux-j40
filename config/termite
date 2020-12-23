@@ -46,49 +46,50 @@ urgent_on_bell = true
 #####
 
 [colors]
+# Base16 3024
+# Author: Jan T. Sott (http://github.com/idleberg)
 
-# special
-foreground      = #98d1ce
-foreground_bold = #98d1ce
-cursor          = #98d1ce
-background      = #0a0f14
+foreground      = #a5a2a2
+foreground_bold = #d6d5d4
+cursor          = #d6d5d4
+background = rgba(40, 42, 54, 0.9)
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #0b1c2c
-color8  = #627e99
-color7  = #cbd6e2
-color15 = #f7f9fb
+color0  = #090300
+color8  = #5c5855
+color7  = #a5a2a2
+color15 = #f7f7f7
 
 # Red
-color1  = #bf8b56
-color9  = #bf8b56
+color1  = #db2d20
+color9  = #db2d20
 
 # Green
-color2  = #56bf8b
-color10 = #56bf8b
+color2  = #01a252
+color10 = #01a252
 
 # Yellow
-color3  = #8bbf56
-color11 = #8bbf56
+color3  = #fded02
+color11 = #fded02
 
 # Blue
-color4  = #8b56bf
-color12 = #8b56bf
+color4  = #01a0e4
+color12 = #01a0e4
 
 # Purple
-color5  = #bf568b
-color13 = #bf568b
+color5  = #a16a94
+color13 = #a16a94
 
 # Teal
-color6  = #568bbf
-color14 = #568bbf
+color6  = #b5e4f4
+color14 = #b5e4f4
 
 # Extra colors
-color16 = #bfbf56
-color17 = #bf5656
-color18 = #223b54
-color19 = #405c79
-color20 = #aabcce
-color21 = #e5ebf1
+color16 = #e8bbd0
+color17 = #cdab53
+color18 = #3a3432
+color19 = #4a4543
+color20 = #807d7c
+color21 = #d6d5d4
