@@ -152,6 +152,7 @@ yasm
 python-virtualenv
 lsd
 fortune-mod
+julia
 )
 
 count=0
@@ -218,6 +219,14 @@ echo "################################################################"
 echo
 tput sgr0
 sudo hardcode-fixer
+
+tput setaf 5
+echo "################################################################"
+echo "Setting Firefox as default browser"
+echo "################################################################"
+echo
+tput sgr0
+xdg-settings set default-web-browser firefox.desktop
 
 tput setaf 11;
 echo "################################################################"
