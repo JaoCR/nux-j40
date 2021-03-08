@@ -1,9 +1,62 @@
-#vim: set ft=toml
+# vim: ft=toml
+
+format = """
+[╭─ ](bold dimmed blue)$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory[
+[│ ](bold dimmed blue)$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration]()
+[╰](bold dimmed blue)\
+$time\
+$lua\
+$jobs\
+$battery\
+$status\
+$character"""
 
 [battery]
-full_symbol = "  "
-charging_symbol = " "
-discharging_symbol = "  "
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
 
 [[battery.display]]
 threshold = 30
@@ -53,9 +106,9 @@ style = "bold dimmed white"
 disabled = true
 
 [julia]
-format = "[$symbol$version]($style) "
-symbol = "ஃ "
-style = "bold green"
+format = "[$symbol⟪ [$version](dimmed) ⟫]($style) "
+symbol = " "
+style = "bold purple"
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
@@ -70,15 +123,12 @@ disabled = true
 
 [python]
 symbol = " "
-
 format = "[$symbol($virtualenv )⟪ [$version](dimmed) ⟫]($style) "
 style = "bold green"
 
 [time]
 time_format = "%T"
-style = "none bright-white"
-right = "[⦗](bold dimmed white)"
-left = "[⦘](bold dimmed white)"
+style = "bright-white"
 format = "[⦗](bold dimmed blue)$time($style)[⦘](bold dimmed blue) "
 disabled = false
 
