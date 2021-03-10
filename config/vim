@@ -63,6 +63,9 @@ noremap <silent> < :vert res -1<CR>
 packadd termdebug
 cnoreabbrev gdb :Termdebug %:r<CR><c-w>2j<c-w>L
 
+" git lowercase
+cnoreabbrev git :Git
+
 " airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'badwolf'

@@ -5,8 +5,7 @@ format = """
 $hostname\
 $shlvl\
 $kubernetes\
-$directory[
-[│ ](bold dimmed blue)$git_branch\
+$directory\
 $git_commit\
 $git_state\
 $git_status\
@@ -44,7 +43,7 @@ $openstack\
 $env_var\
 $crystal\
 $custom\
-$cmd_duration]()
+$cmd_duration()
 [╰](bold dimmed blue)\
 $time\
 $lua\
