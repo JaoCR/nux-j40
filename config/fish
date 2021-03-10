@@ -1,5 +1,5 @@
 #! /usr/bin/fish
-# vim: set ft=fish:
+# vim: ft=fish
 #
 #      _   ___ _____
 #     (_) /   |  _  |
@@ -183,7 +183,7 @@ starship init fish | source
 #alias fish_greeting='pfetch'
 function fish_greeting
     set -l colordir ~/.j40/fun/color-scripts/color-scripts
-    command find $colordir | command sort -R | command tail -1 | fish 
+    $colordir/faces
 end
 
 
@@ -228,6 +228,9 @@ function cfg -a name
 end
 complete -f -c "cfg" -a (command ls ~/.j40/config/ | string join " ")
 
+# ssh key for git(hub/lab)
+alias sshkg='ssh-keygen -t ed25519 -C "jc.rodrigues1997@usp.br"'
+alias sshcp='xclip -sel clip < ~/.ssh/id_ed25519.pub'
 
 
 ################

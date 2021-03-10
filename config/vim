@@ -1,3 +1,4 @@
+" vim: ft=vim
 "     _   ___ _____ 
 "    (_) /   |  _  |
 "     _ / /| | |/' |
@@ -61,6 +62,9 @@ noremap <silent> < :vert res -1<CR>
 " preload Termdebug
 packadd termdebug
 cnoreabbrev gdb :Termdebug %:r<CR><c-w>2j<c-w>L
+
+" git lowercase
+cnoreabbrev git :Git
 
 " airline configuration
 let g:airline_powerline_fonts = 1
