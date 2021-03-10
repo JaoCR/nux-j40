@@ -153,6 +153,7 @@ python-virtualenv
 lsd
 fortune-mod
 julia
+gvim
 )
 
 count=0
